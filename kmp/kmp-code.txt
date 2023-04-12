@@ -1,9 +1,14 @@
+/*sanks 2 力扣（LeetCode）'s code​*/
+/*https://zhuanlan.zhihu.com/p/590320362*/
+
 package alpiece.example;
 
 /*简述：内重增效异重。缩：重重*/
 
 public class StrContainsKmp {
     public static boolean contains(String s, String p) {
+	    //i: 纯递增
+		//j: 分段的判断砝码，也用于重置
         int ls = s.length(), lp = p.length(), i = 0, j = 0;
         int[] next = new int[lp];
         getPPPNextArray(p, next);//获取关于模式串p的next数组
@@ -50,7 +55,7 @@ public class StrContainsKmp {
         next[1] = 0;
 
         //i: 纯递增，整数数组next[i]
-		//cn: 分段的判断砝码
+		//cn: 分段的判断砝码，也用于重置
 
         int i = 2, cn = next[i - 1];
 		
